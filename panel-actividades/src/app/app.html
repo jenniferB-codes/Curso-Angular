@@ -1,11 +1,23 @@
-<style>
-  h1{
-    color: blue;
-  }
-</style>
-<main>
-  <h1>Panel de actividades</h1>
-  <p>This is my first</p>
-</main>
+<section class="panel" aria-labelledby="filtros-titulo">
+  <h2 id="filtros-titulo">Buscar y filtrar</h2>
 
-<router-outlet />
+  <form>
+    <div>
+      <label for="buscar">Buscar actividad</label>
+      <input type="search" id="buscar" name="buscar">
+    </div>
+
+    <div>
+      <label for="estado">Estado</label>
+      <select id="estado" name="estado">
+        <option value="">Todos</option>
+        <option value="pendiente">Pendiente</option>
+        <option value="completada">Completada</option>
+      </select>
+    </div>
+
+    <button type="submit">Aplicar filtros</button>
+  </form>
+</section>
+
+<a href="#nueva-actividad">Nueva actividad</a>

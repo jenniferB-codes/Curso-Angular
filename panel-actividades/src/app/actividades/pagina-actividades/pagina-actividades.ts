@@ -1,13 +1,13 @@
 import { Component, signal, computed, effect } from '@angular/core';
-import { Actividad, EstadoActividad, FiltroEstado, FiltroPrioridad, Prioridad } from '../modelos/actividad';
+import { Actividad, EstadoActividad, FiltroEstado, FiltroPrioridad, Prioridad } from '../../modelos/actividad';
 
 @Component({
-  selector: 'app-tablero-prioridades',
-  templateUrl: './tablero-prioridades.html',
-  styleUrl: './tablero-prioridades.css',
+  selector: 'app-pagina-actividades',
+  templateUrl: './pagina-actividades.html',
+  styleUrl: './pagina-actividades.css',
 })
 
-export class TableroPrioridades {
+export class PaginaActividades {
 
   private readonly orden: Record<Prioridad, number> = { alta: 0, media: 1, baja: 2 };
 

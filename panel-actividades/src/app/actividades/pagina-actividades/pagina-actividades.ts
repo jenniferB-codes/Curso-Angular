@@ -1,10 +1,15 @@
 import { Component, signal, computed, effect } from '@angular/core';
 import { Actividad, EstadoActividad, FiltroEstado, FiltroPrioridad, Prioridad } from '../../modelos/actividad';
+import { ResumenActividades } from '../resumen-actividades/resumen-actividades';
+import { ListaActividades } from '../lista-actividades/lista-actividades';
+import { FiltrosActividades } from '../filtros-actividades/filtros-actividades';
+import { PanelSeccion } from '../../compartido/panel-seccion/panel-seccion';
 
 @Component({
   selector: 'app-pagina-actividades',
   templateUrl: './pagina-actividades.html',
   styleUrl: './pagina-actividades.css',
+  imports: [ResumenActividades, ListaActividades, FiltrosActividades, PanelSeccion],
 })
 
 export class PaginaActividades {
@@ -73,9 +78,9 @@ export class PaginaActividades {
 
   protected readonly mensajeVacio = computed(() =>
     this.total() === 0
-      ? 'Todavía no hay actividades. Crea la primera para empezar.'
-      : 'Ninguna actividad coincide con los filtros aplicados.',
-  );
+    ? 'Todavía no hay actividades'
+    : 'Ninguna actividad coincide con los filtros aplicados',
+);
 
   protected readonly seleccionada = computed(
     () => this.actividades().find((a) => a.id === this.seleccionadaId()) ?? null,
@@ -104,17 +109,6 @@ export class PaginaActividades {
     return 'completada';
   }
 
-  protected buscar(evento: Event): void {
-    this.termino.set((evento.target as HTMLInputElement).value);
-  }
-
-  protected cambiarFiltroEstado(evento: Event): void {
-    this.filtroEstado.set((evento.target as HTMLSelectElement).value as FiltroEstado);
-  }
-
-  protected cambiarFiltroPrioridad(evento: Event): void {
-    this.filtroPrioridad.set((evento.target as HTMLSelectElement).value as FiltroPrioridad);
-  }
 
   protected limpiarFiltros(): void {
     this.termino.set('');

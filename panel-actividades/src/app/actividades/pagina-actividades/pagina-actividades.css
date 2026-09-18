@@ -3,3 +3,5 @@
   flex-direction: column; 
   gap: 1.5rem; 
 }
+
+.aviso { margin: 0; border: 1px solid #949494; border-radius: 0.5rem; padding: 0.5rem 0.75rem; }

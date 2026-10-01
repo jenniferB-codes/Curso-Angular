@@ -43,6 +43,8 @@
 
 .vacio { border: 1px dashed #949494; border-radius: 0.5rem; padding: 1.5rem; text-align: center; }
 
+.enlace-detalle { font-size: 0.85rem; display: inline-block; margin-top: 0.25rem; }
+
 /*
 .estado-vacio { display: block; text-align: center; color: #52606d; }
 

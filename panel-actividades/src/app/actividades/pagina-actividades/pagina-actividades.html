@@ -1,5 +1,7 @@
 <section class="pagina" aria-labelledby="titulo-pagina">
+
   <h2 id="titulo-pagina">Tablero de prioridades</h2>
+
 
   @if (aviso()) {
     <p class="aviso" role="status">{{ aviso() }}</p>
@@ -36,6 +38,8 @@
   </app-panel-seccion>
 
   <app-panel-seccion titulo="Actividades">
+    <a acciones routerLink="/actividades/nueva">Nueva actividad</a>
+
     <button acciones type="button" (click)="restablecer()">Vaciar el tablero</button>
 
     <app-lista-actividades
@@ -49,4 +53,6 @@
       (eliminacionSolicitada)="eliminar($event)"
       (limpiezaSolicitada)="limpiarFiltros()" />
   </app-panel-seccion>
+
+
 </section>

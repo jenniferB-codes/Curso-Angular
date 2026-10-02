@@ -5,7 +5,7 @@ import { ListaActividades } from '../lista-actividades/lista-actividades';
 import { FiltrosActividades } from '../filtros-actividades/filtros-actividades';
 import { PanelSeccion } from '../../compartido/panel-seccion/panel-seccion';
 import { ActividadesService } from '../actividades';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink  } from '@angular/router';
 
 
 @Component({
